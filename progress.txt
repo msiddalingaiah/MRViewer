@@ -1,0 +1,7 @@
+
+TODO
+
+1. Support KeyValueFile (like SequenceFile formatted as serialized KeyValuePairs)
+2. Add KeyValueWriter interface with ShuffleWriter and FileKVWriter implementations
+3. Add more jobs: inverted index of movies by actor, time series using GroupComparator (lead function?)
+4. Refactor input directories, add more detailed description of each job
