@@ -1,10 +1,9 @@
 
-# list of jobs that appear in UI
+# list of jobs
 
-# These are built in, no need to include here
-# job.class.1=com.madhu.mr.job.LineCountJob
-# job.class.2=com.madhu.mr.job.WordCountJob
-# job.class.3=com.madhu.mr.job.DedupeJob
-# job.class.4=com.madhu.mr.job.SearchReplaceJob
-# job.class.5=com.madhu.mr.job.CardSortJob
-# job.class.6=com.madhu.mr.job.ActorJob
+job.class.1=com.madhu.mr.job.LineCountJob
+job.class.2=com.madhu.mr.job.WordCountJob
+job.class.3=com.madhu.mr.job.DedupeJob
+job.class.4=com.madhu.mr.job.SearchReplaceJob
+job.class.5=com.madhu.mr.job.CardSortJob
+job.class.6=com.madhu.mr.job.ActorJob

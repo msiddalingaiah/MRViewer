@@ -152,6 +152,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		inputDirTF = new JTextField();
 		inputPanel.add(inputDirTF);
 		inputDirTF.setColumns(40);
+		inputDirTF.setEditable(false);
 		
 		inputDirButton = new JButton("...");
 		inputPanel.add(inputDirButton);
@@ -169,6 +170,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		outputDirTF = new JTextField();
 		outputPanel.add(outputDirTF);
 		outputDirTF.setColumns(40);
+		outputDirTF.setEditable(false);
 		
 		outputDirButton = new JButton("...");
 		outputPanel.add(outputDirButton);
@@ -177,13 +179,6 @@ public class MainFrame extends JFrame implements ActionListener {
 
 		outputDirButton.addActionListener(this);
 		inputDirButton.addActionListener(this);
-
-		jobCombo.addItem(Class.forName("com.madhu.mr.job.LineCountJob").newInstance());
-		jobCombo.addItem(Class.forName("com.madhu.mr.job.WordCountJob").newInstance());
-		jobCombo.addItem(Class.forName("com.madhu.mr.job.DedupeJob").newInstance());
-		jobCombo.addItem(Class.forName("com.madhu.mr.job.SearchReplaceJob").newInstance());
-		jobCombo.addItem(Class.forName("com.madhu.mr.job.CardSortJob").newInstance());
-		jobCombo.addItem(Class.forName("com.madhu.mr.job.ActorJob").newInstance());
 
 		int index = 1;
 		String clazz;
@@ -261,7 +256,7 @@ public class MainFrame extends JFrame implements ActionListener {
 				doGoButton();
 			} catch (Exception exc) {
 				exc.printStackTrace();
-				JOptionPane.showMessageDialog(null, e.toString(), "Error", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, exc.toString(), "Error", JOptionPane.ERROR_MESSAGE);
 			}
 		} else if (source == exitMenuItem) {
 			System.exit(0);
@@ -353,15 +348,17 @@ public class MainFrame extends JFrame implements ActionListener {
 	 * @throws Exception 
 	 */
 	public static void main(String[] args) throws Exception {
-		Properties props = new Properties();
 		String propName = "props.txt";
 		if (args.length > 0) {
 			propName = args[0];
 		}
 		File file = new File(propName);
-		if (file.exists()) {
-			props.load(new FileReader(file));
+		if (!file.exists()) {
+			System.out.println("Unable to find properties file " + propName);
+			System.exit(1);
 		}
+		Properties props = new Properties();
+		props.load(new FileReader(file));
 		MainFrame m = new MainFrame("MapReduce Viewer", props);
 		m.setVisible(true);
 	}

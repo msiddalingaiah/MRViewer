@@ -1,0 +1,7 @@
+
+git add actor_input
+git add build.xml
+git add src/* mrviewer.jar props.txt
+git status
+git add git-help.txt
+git push origin master

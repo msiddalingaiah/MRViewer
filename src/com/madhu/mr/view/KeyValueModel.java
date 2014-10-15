@@ -19,8 +19,6 @@ package com.madhu.mr.view;
 
 import java.util.ArrayList;
 
-import javax.swing.ListSelectionModel;
-import javax.swing.event.ListSelectionListener;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
 

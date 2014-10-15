@@ -24,7 +24,6 @@ import javax.swing.JTable;
 
 import com.madhu.mr.KeyValuePair;
 import com.madhu.mr.Mapper;
-import com.madhu.mr.PartitionedKeyValuePair;
 
 public class MapOnlyPanel extends MapperPanel {
 	public MapOnlyPanel(int index, File file, Mapper mapper) {

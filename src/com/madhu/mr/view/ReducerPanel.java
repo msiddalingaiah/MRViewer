@@ -105,7 +105,7 @@ public class ReducerPanel extends JPanel implements ActionListener {
 			}
 		} catch (Exception exc) {
 			exc.printStackTrace();
-			JOptionPane.showMessageDialog(this, e.toString(), "Error", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(this, exc.toString(), "Error", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 

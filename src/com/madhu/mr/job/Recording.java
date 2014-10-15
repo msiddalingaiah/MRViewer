@@ -17,9 +17,6 @@
 
 package com.madhu.mr.job;
 
-import java.io.DataInput;
-import java.io.DataOutput;
-import java.io.IOException;
 import java.io.Serializable;
 
 /**

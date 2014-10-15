@@ -32,6 +32,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -146,8 +147,9 @@ public class FormPanel<E> extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					System.out.println(form.collectValues());
-				} catch (Exception e1) {
-					e1.printStackTrace();
+				} catch (Exception exc) {
+					exc.printStackTrace();
+					JOptionPane.showMessageDialog(null, exc.toString(), "Error", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});

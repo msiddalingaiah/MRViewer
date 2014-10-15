@@ -26,6 +26,7 @@ import java.util.ArrayList;
 
 import javax.swing.DefaultListSelectionModel;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
@@ -110,11 +111,16 @@ public class MapperPanel extends JPanel implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		Object source = e.getSource();
-		if (source == stepButton) {
-			doStep();
-		} else if (source == runButton) {
-			doRun();
+		try {
+			Object source = e.getSource();
+			if (source == stepButton) {
+				doStep();
+			} else if (source == runButton) {
+				doRun();
+			}
+		} catch (Exception exc) {
+			exc.printStackTrace();
+			JOptionPane.showMessageDialog(this, exc.toString(), "Error", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 

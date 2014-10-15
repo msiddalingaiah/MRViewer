@@ -19,11 +19,8 @@ package com.madhu.mr.job;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,7 +29,6 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.StringTokenizer;
 
-import com.madhu.mr.KeyValuePair;
 import com.madhu.mr.SerializedFileWriter;
 
 /**
